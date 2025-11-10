@@ -10,11 +10,14 @@ export default [
 		files: ['**/*.vue', '**/*.js'],
 		languageOptions: {
 			ecmaVersion: 'latest',
-			sourceType: 'module'
+			sourceType: 'module',
 		},
 		rules: {
 			'vue/multi-word-component-names': 'off',
 			'vue/require-default-prop': 'off'
+		},
+		env: {
+			browser: true,
 		}
 	}
 ]
