@@ -1,21 +1,30 @@
 <script setup>
-import Button from './components/Button.vue'
+import Stat from './components/Stat.vue'
+import CitySelect from './components/CitySelect.vue'
+
+const data = {
+	label: 'Влажность',
+	stat: '90%'
+}
+
+const getCity = (city) => {
+	console.log(city)
+}
+
 </script>
 
 <template>
 	<main class="main">
-		<Button>
-			<template #icon> + </template>
-			<template #text>Сохранить</template>
-		</Button>
+		<Stat v-bind="data" />
+		<CitySelect @select-city="getCity" />
 	</main>
 </template>
 
 <style scoped>
-	.main {
-		padding: 60px 50px;
+.main {
+	padding: 60px 50px;
 
-		background-color: var(--color-bg-main);
-		border-radius: 25px;
-	}
+	background-color: var(--color-bg-main);
+	border-radius: 25px;
+}
 </style>
